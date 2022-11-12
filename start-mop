@@ -1,3 +1,2 @@
 #!/bin/bash -x
-
 docker-compose -f ./docker-compose-mop.yaml up -d --force-recreate --build --remove-orphans
