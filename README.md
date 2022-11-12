@@ -54,22 +54,23 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#components-of-metric-pipeline">Components of metric pipeline</a></li>
       </ul>
     </li>
+    <li><a href="#open-source-tools-used">Open Source tools used</a></li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Getting started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <!-- <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li> -->
   </ol>
 </details>
 
@@ -86,7 +87,7 @@ While logs are more common tool for gauging the behaviour, metrics are as much i
 
 <br>
 
-### What does this repo do ?
+### Components of metric pipeline
 This repo will help you set up a simple and complete observability pipeline in your docker environment. The metrics-observability-pipeline has the following capabilities: 
 
 1. Set up a collector to collect prometheus format metrics
@@ -101,7 +102,7 @@ This repo will help you set up a simple and complete observability pipeline in y
 
 ### Open Source tools used
 
-This repo helps you put together a working 
+Here is a list of all the open source tools we will use.
 
 * [Victoria Metrics][VictoriaMetrics-url]
   * [vmagent][vmagent-url]
