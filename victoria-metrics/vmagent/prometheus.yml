@@ -1,0 +1,37 @@
+global:
+  scrape_interval: '10s'
+
+scrape_configs:
+  - job_name: "vmselect-self-check"
+    static_configs:
+      - targets: ['vmselect:8481']
+        labels:
+          group: 'selfcheck'
+
+  - job_name: "vmalert-self-check"
+    static_configs:
+      - targets: ['vmalert:8880']
+        labels:
+          group: 'selfcheck'
+
+  - job_name: "vminsert-self-check"
+    static_configs:
+      - targets: ['vminsert:8480']
+        labels:
+          group: 'selfcheck'
+
+  - job_name: "vmagent-self-check"
+    static_configs:
+      - targets: ['vmagent:8429']
+        labels:
+          group: 'selfcheck'
+
+  # # sample for reading data from a port 5000 on the host machine
+  # - job_name: "myapp-job-name"
+  #   # path to metrics
+  #   metrics_path: 'metrics/histogram'
+  #   static_configs:
+  #     # the host.docker.internal refers to host machine.
+  #     - targets: ['host.docker.internal:5000']
+  #       labels:
+  #         group: 'myapp-group'
