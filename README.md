@@ -172,7 +172,7 @@ After the pipeline is up and running
 3. Punch in Grafana credentials. 
   ```
   username: mopadmin
-  password: moppasword
+  password: moppassword
   ```
 You can change these login credentials in `grafana.ini` file under `grafana` directory.
 4. After logging in try looking at one of the precreated victoria metrics health dashbord by heading over to `http://localhost:3000/d/wNf0q_kZk/victoriametrics?orgId=1&refresh=30s`
