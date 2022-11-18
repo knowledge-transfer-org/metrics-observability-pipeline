@@ -34,6 +34,17 @@ services:
     networks:
       - mop_network
 
+  sample-metrics:
+    build:
+      context: './sample-metrics'
+    container_name: 'mop-sample-metrics'
+    hostname: mop-sample-metrics
+    restart: 'always'
+    ports:
+      - '8000:8000'
+    networks:
+      - mop_network
+
   # Grafana for vizualizing
   grafana:
     build:

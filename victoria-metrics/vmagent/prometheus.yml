@@ -26,6 +26,12 @@ scrape_configs:
         labels:
           group: 'selfcheck'
 
+  - job_name: "sample-metrics"
+    static_configs:
+      - targets: ['sample-metrics:8000']
+        labels:
+          group: 'selfcheck'
+
   # # sample for reading data from a port 5000 on the host machine
   # - job_name: "myapp-job-name"
   #   # path to metrics
