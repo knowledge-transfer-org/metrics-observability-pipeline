@@ -18,9 +18,10 @@ COPY --from=compiler /opt/venv /opt/venv
 
 # Enable venv
 ENV PATH="/opt/venv/bin:$PATH"
-COPY scripts/prometheus-metrics.py ./
+COPY scripts/ ./
 
 # Needed for prometheus metrics generator to remove _created series
 ENV PROMETHEUS_DISABLE_CREATED_SERIES=True
 
-CMD ["./prometheus-metrics.py"] 
+CMD ["./prometheus-metrics.py"]
+CMD ["./statsd-metrics.py"]
