@@ -3,14 +3,14 @@ groups:
   - name: vmcluster-health
     # note the `job` filter and update accordingly to your setup
     rules:
-      - alert: TooManyRestarts
-        expr: changes(process_start_time_seconds{job=~"vmselect|vminsert|vmstorage|vmagent|vmalert"}[15m]) > 2
-        labels:
-          severity: critical
-        annotations:
-          summary: "{{ $labels.job }} too many restarts (instance {{ $labels.instance }})"
-          description: "Job {{ $labels.job }} (instance {{ $labels.instance }}) has restarted more than twice in the last 15 minutes.
-            It might be crashlooping."
+      # - alert: TooManyRestarts
+      #   expr: changes(process_start_time_seconds{job=~"vmselect|vminsert|vmstorage|vmagent|vmalert"}[15m]) > 2
+      #   labels:
+      #     severity: critical
+      #   annotations:
+      #     summary: "{{ $labels.job }} too many restarts (instance {{ $labels.instance }})"
+      #     description: "Job {{ $labels.job }} (instance {{ $labels.instance }}) has restarted more than twice in the last 15 minutes.
+      #       It might be crashlooping."
 
       - alert: Dummy alert rule
         expr: prom_dummy_gauge_1 > 300
