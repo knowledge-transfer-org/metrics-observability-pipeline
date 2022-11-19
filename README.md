@@ -63,6 +63,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#install-a-node-exporter-on-your-host-machine-for-exporting-your-machine-system-stats">Install a node exporter</a></li>
         <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
@@ -165,13 +166,9 @@ a7409d3288a3   victoriametrics/vmselect:v1.83.1-cluster    "/vmselect-prod --stâ
 31667c83339d   metrics-observability-pipeline_telegraf     "/entrypoint.sh teleâ€¦"   48 seconds ago   Up 47 seconds   8092/udp, 8094/tcp, 0.0.0.0:8125->8125/udp                                  mop-telegraf
 ```
 
-### Install a node exporter on your host machine for exporting your machine's system stats
+### Install a node exporter on your host machine for exporting your machine system stats
 1. Find the right node exporter for yourself from here. [node-exporter-downloads-page]
-2. Run wget with the correct link.  
-For MAC - `wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.darwin-amd64.tar.gz`
-<br>
-For Linux - `wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz`
-<br>
+2. Run wget with the correct link.
 3. Unzip. Run `tar xvfz node_exporter-*.*-amd64.tar.gz` in the directory where you wget the node-exporter.
 4. Change into the unzip directory. `cd node_exporter-*.*-amd64`
 5. Run the node exporter. `./node_exporter`
@@ -181,7 +178,7 @@ For Linux - `wget https://github.com/prometheus/node_exporter/releases/download/
 > For windows please follow `https://github.com/prometheus-community/windows_exporter`
 
 ### Usage
-After the pipeline is up and running  
+After the pipeline is up and running 
 1. Open a new web-browser window.
 2. Launch your locally running Grafana instance `http://localhost:3000/`
 3. Punch in Grafana credentials. 
