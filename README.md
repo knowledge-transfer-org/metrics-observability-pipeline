@@ -219,9 +219,13 @@ Don't forget to give the project a star! Thanks again!
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
+Open source libraries like datadog and prometheus-client and tools listed here <a href="#open-source-tools-used">Open Source tools used</a> are trademarks of respective companies. We do not not intend to claim credit or blame for the work.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+## FAQs
+### 1. My node exported dashboard does not show up right values.  
+The node exporter exports different slightly different values depending on your environment. Please import the right dashboard https://github.com/rfmoz/grafana-dashboards/tree/master/prometheus. The current dashboard is https://github.com/rfmoz/grafana-dashboards/blob/master/prometheus/node-exporter-freebsd.json
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
