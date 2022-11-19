@@ -39,8 +39,8 @@ def report_prom_dummy_counter_1_counter(inc, label_dict):
                            label_dict["label3"])\
                       .inc(amount=inc)
 
-prom_dummy_counter_2 = Counter("prom_prom_dummy_counter_2", 
-                          "prom_prom_dummy_counter_2_description", 
+prom_dummy_counter_2 = Counter("prom_dummy_counter_2", 
+                          "prom_dummy_counter_2_description", 
                           ['label1', 'label2'])
 def report_prom_dummy_counter_2_counter(inc, label_dict):
     prom_dummy_counter_2.labels(label_dict["label1"], 
@@ -55,6 +55,10 @@ def init():
     while True:
         report_prom_dummy_gauge_1_gauge(metric_val=random.randint(1,100),
                                    label_dict={"label1": "label1_val"})
+
+        # punch a value for dummy alert
+        report_prom_dummy_gauge_1_gauge(metric_val=500,
+                                   label_dict={"label1": "label2_val"})
 
         report_prom_dummy_gauge_2_gauge(metric_val=random.randint(100,200),
                                    label_dict={"label1": "label1_val",
