@@ -33,11 +33,11 @@ scrape_configs:
           group: 'selfcheck'
 
   # # sample for reading data from a port 5000 on the host machine
-  # - job_name: "myapp-job-name"
-  #   # path to metrics
-  #   metrics_path: 'metrics/histogram'
-  #   static_configs:
-  #     # the host.docker.internal refers to host machine.
-  #     - targets: ['host.docker.internal:5000']
-  #       labels:
-  #         group: 'myapp-group'
+  - job_name: "node-exporter"
+    # path to metrics
+    metrics_path: '/metrics'
+    static_configs:
+      # the host.docker.internal refers to host machine.
+      - targets: ['host.docker.internal:9100']
+        labels:
+          group: 'sys-stats-group'
