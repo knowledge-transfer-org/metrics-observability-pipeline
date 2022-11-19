@@ -171,6 +171,7 @@ a7409d3288a3   victoriametrics/vmselect:v1.83.1-cluster    "/vmselect-prod --stâ
 For MAC - `wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.darwin-amd64.tar.gz`
 <br>
 For Linux - `wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz`
+<br>
 3. Unzip. Run `tar xvfz node_exporter-*.*-amd64.tar.gz` in the directory where you wget the node-exporter.
 4. Change into the unzip directory. `cd node_exporter-*.*-amd64`
 5. Run the node exporter. `./node_exporter`
