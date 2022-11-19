@@ -165,6 +165,20 @@ a7409d3288a3   victoriametrics/vmselect:v1.83.1-cluster    "/vmselect-prod --stâ
 31667c83339d   metrics-observability-pipeline_telegraf     "/entrypoint.sh teleâ€¦"   48 seconds ago   Up 47 seconds   8092/udp, 8094/tcp, 0.0.0.0:8125->8125/udp                                  mop-telegraf
 ```
 
+### Install a node exporter on your host machine for exporting your machine's system stats
+1. Find the right node exporter for yourself from here. [node-exporter-downloads-page]
+2. Run wget with the correct link.  
+For MAC - `wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.darwin-amd64.tar.gz`
+<br>
+For Linux - `wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz`
+3. Unzip. Run `tar xvfz node_exporter-*.*-amd64.tar.gz` in the directory where you wget the node-exporter.
+4. Change into the unzip directory. `cd node_exporter-*.*-amd64`
+5. Run the node exporter. `./node_exporter`
+6. This will expose the machine metrics on 9100. Check these metrics to this link from browser - `http://localhost:9100/metrics`
+7. The scrape configs are already included in vmagent.
+<br>
+> For windows please follow `https://github.com/prometheus-community/windows_exporter`
+
 ### Usage
 After the pipeline is up and running  
 1. Open a new web-browser window.
@@ -234,6 +248,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Telegraf-url]: https://www.influxdata.com/time-series-platform/telegraf/
 [vmcluster-url]: https://docs.victoriametrics.com/Cluster-VictoriaMetrics.html
 [promalertmanager-url]: https://prometheus.io/docs/alerting/latest/alertmanager/
+[node-exporter-downloads-page]: https://prometheus.io/download/#node_exporter
 [docker-url]: https://www.docker.com/
 [get-docker-url]: https://docs.docker.com/get-docker/
 [get-docker-compose]: https://docs.docker.com/compose/install/
