@@ -63,15 +63,18 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <ul>
+          <li><a href="#access-grafana">Access Grafana [Best Part]</a></li>
+        </ul>
         <li><a href="#install-a-node-exporter-on-your-host-machine-for-exporting-your-machine-system-stats">Install a node exporter</a></li>
-        <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
     <!-- <li><a href="#roadmap">Roadmap</a></li> -->
     <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#faqs">FAQs</a></li>
     <li><a href="#license">License</a></li>
-    <!-- <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li> -->
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -165,6 +168,21 @@ a7409d3288a3   victoriametrics/vmselect:v1.83.1-cluster    "/vmselect-prod --stâ
 67de46bf371d   prom/alertmanager:v0.24.0                   "/bin/alertmanager -â€¦"   48 seconds ago   Up 47 seconds   0.0.0.0:9093->9093/tcp                                                      mop-alertmanager
 31667c83339d   metrics-observability-pipeline_telegraf     "/entrypoint.sh teleâ€¦"   48 seconds ago   Up 47 seconds   8092/udp, 8094/tcp, 0.0.0.0:8125->8125/udp                                  mop-telegraf
 ```
+<br>
+
+#### Access Grafana
+After the pipeline is up and running 
+
+1. Open a new web-browser window.
+2. Launch your locally running Grafana instance `http://localhost:3000/`
+3. Punch in Grafana credentials. 
+  ```
+  username: mopadmin
+  password: moppassword
+  ```
+You can change these login credentials in `grafana.ini` file under `grafana` directory.
+4. After logging in try looking at one of the precreated victoria metrics health dashbord by heading over to `http://localhost:3000/d/wNf0q_kZk/victoriametrics?orgId=1&refresh=30s`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Install a node exporter on your host machine for exporting your machine system stats
 1. Find the right node exporter for yourself from here. [node-exporter-downloads-page]
@@ -177,24 +195,7 @@ a7409d3288a3   victoriametrics/vmselect:v1.83.1-cluster    "/vmselect-prod --stâ
 <br>
 > For windows please follow `https://github.com/prometheus-community/windows_exporter`
 
-### Usage
-After the pipeline is up and running 
-1. Open a new web-browser window.
-2. Launch your locally running Grafana instance `http://localhost:3000/`
-3. Punch in Grafana credentials. 
-  ```
-  username: mopadmin
-  password: moppassword
-  ```
-You can change these login credentials in `grafana.ini` file under `grafana` directory.
-4. After logging in try looking at one of the precreated victoria metrics health dashbord by heading over to `http://localhost:3000/d/wNf0q_kZk/victoriametrics?orgId=1&refresh=30s`
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- Modifying the existing code -->
-<!-- ## Modifing the existing code. -->
-
 
 
 <!-- CONTRIBUTING -->
@@ -210,23 +211,38 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-Open source libraries like datadog and prometheus-client and tools listed here <a href="#open-source-tools-used">Open Source tools used</a> are trademarks of respective companies. We do not not intend to claim credit or blame for the work.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## FAQs
 ### 1. My node exported dashboard does not show up right values.  
 The node exporter exports different slightly different values depending on your environment. Please import the right dashboard https://github.com/rfmoz/grafana-dashboards/tree/master/prometheus. The current dashboard is https://github.com/rfmoz/grafana-dashboards/blob/master/prometheus/node-exporter-freebsd.json
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- LICENSE -->
+## License
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+Open source libraries like datadog and prometheus-client and tools listed here <a href="#open-source-tools-used">Open Source tools used</a> are trademarks of respective companies. We do not not intend to claim credit or blame for the work.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+Achin Gupta - [Git Profile](https://github.com/guptaachin)
+<br>
+Email - achin.pu.usc@gmail.com 
+<br>
+Other helpful repos: [knowledge-transfer-org](https://github.com/knowledge-transfer-org/)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+* [Victoria Metrics][VictoriaMetrics-url]
+* [Grafana][Grafana-url]
+* [Telegraf][Telegraf-url]
+* [Prometheus Alert Manager][promalertmanager-url]
+* [Docker][docker-url]
+* [README Template](https://github.com/othneildrew/Best-README-Template)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
