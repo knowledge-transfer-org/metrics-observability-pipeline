@@ -23,5 +23,4 @@ COPY scripts/ ./
 # Needed for prometheus metrics generator to remove _created series
 ENV PROMETHEUS_DISABLE_CREATED_SERIES=True
 
-CMD ["./prometheus-metrics.py"]
-CMD ["./statsd-metrics.py"]
+ENTRYPOINT ["./docker_entrypoint.sh"]
