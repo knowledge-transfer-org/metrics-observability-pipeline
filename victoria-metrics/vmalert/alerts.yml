@@ -11,3 +11,11 @@ groups:
           summary: "{{ $labels.job }} too many restarts (instance {{ $labels.instance }})"
           description: "Job {{ $labels.job }} (instance {{ $labels.instance }}) has restarted more than twice in the last 15 minutes.
             It might be crashlooping."
+
+      - alert: Dummy alert rule
+        expr: statsd_dummy_gauge_1_value > 1
+        labels:
+          severity: critical
+        annotations:
+          summary: "dummy breacking threshold"
+          description: "dummy breaching threshold"
