@@ -238,7 +238,8 @@ You are welcome to fork this repo and contribute. For now, this repo for is only
 <!-- LICENSE -->
 ## License
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-Open source libraries like datadog and prometheus-client and tools listed here <a href="#open-source-tools-used">Open Source tools used</a> are trademarks of respective companies. We do not not intend to claim credit or blame for the work.
+<br>
+Open source libraries like datadog and prometheus-client and tools listed here <a href="#open-source-tools-used">Open Source tools used</a> are trademarks of respective companies. We do not intend to claim credit or blame for the work.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
@@ -286,5 +287,5 @@ Other helpful repos under [knowledge-transfer-org](https://github.com/knowledge-
 [node-exporter-downloads-page]: https://prometheus.io/download/#node_exporter
 [docker-url]: https://www.docker.com/
 [get-docker-url]: https://docs.docker.com/get-docker/
-[get-docker-compose]: https://docs.docker.com/compose/install/
+[get-docker-compose-url]: https://docs.docker.com/compose/install/
 [git-guide]: https://github.com/git-guides/install-git
