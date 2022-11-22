@@ -214,23 +214,41 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## FAQs
-### 1. My node exported dashboard does not show up right values.  
+### 1. My node exported dashboard does not show up right values. How should I proceed ? 
 The node exporter exports different slightly different values depending on your environment. Please import the right dashboard https://github.com/rfmoz/grafana-dashboards/tree/master/prometheus. The current dashboard is https://github.com/rfmoz/grafana-dashboards/blob/master/prometheus/node-exporter-freebsd.json
+
+### 2. How can I deploy this in Kubernetes ?
+The most obvious way is to use [Kompose](https://github.com/kubernetes/kompose) for converting the docker compose to a [helm](https://helm.sh/) chart and then use helm commands to do a set up in Kubernetes. Please note I haven't tested it. Setting this up is out of scope of this repo.
+
+### 3. Getting bind address already in use errors. How should I proceed ?
+This usually happens when the port an application like Grafana (3000) is already in use by some other application.  
+This repo assumes that the standard ports of used open source tools are vacant on the machine you are trying to set up. To solve, either change the ports mapped in docker-compose-mop file or stop the processes hogging those ports.
+
+### 4. What is the username and password for Grafana ?
+Please check <a href="#access-grafana">Access Grafana [Best Part]</a>. If you want to change the credentials, you can do so in `/grafana/grafana.ini` file.
+
+### 5. Difference in prometheus queries <PromQL> and queries I write in grafana. How should I proceed ?
+This is because while grafana uses Prometheus as the datasource type, it uses Victoria Metrics under the hood. Victoria Metrics under the hood uses [MetricsQL](https://docs.victoriametrics.com/MetricsQL.html) which was created by adding some more features on PromQL.
+
+### 6. Can I used this set up to use for logs or traces ?
+You are welcome to fork this repo and contribute. For now, this repo for is only for metrics. 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 ## License
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-Open source libraries like datadog and prometheus-client and tools listed here <a href="#open-source-tools-used">Open Source tools used</a> are trademarks of respective companies. We do not not intend to claim credit or blame for the work.
+<br>
+Open source libraries like datadog and prometheus-client and tools listed here <a href="#open-source-tools-used">Open Source tools used</a> are trademarks of respective companies. We do not intend to claim credit or blame for the work.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
-Achin Gupta - [Git Profile](https://github.com/guptaachin)
+Achin Gupta - [Github](https://github.com/guptaachin)
 <br>
 Email - achin.pu.usc@gmail.com 
 <br>
-Other helpful repos: [knowledge-transfer-org](https://github.com/knowledge-transfer-org/)
+Other helpful repos under [knowledge-transfer-org](https://github.com/knowledge-transfer-org/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
@@ -269,5 +287,5 @@ Other helpful repos: [knowledge-transfer-org](https://github.com/knowledge-trans
 [node-exporter-downloads-page]: https://prometheus.io/download/#node_exporter
 [docker-url]: https://www.docker.com/
 [get-docker-url]: https://docs.docker.com/get-docker/
-[get-docker-compose]: https://docs.docker.com/compose/install/
+[get-docker-compose-url]: https://docs.docker.com/compose/install/
 [git-guide]: https://github.com/git-guides/install-git
