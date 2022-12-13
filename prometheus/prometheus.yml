@@ -38,6 +38,7 @@ scrape_configs:
         labels:
           group: 'selfcheck'
 
+
   # node exporter to read sys stats from host machine
   - job_name: "node-exporter"
     # path to metrics
@@ -47,3 +48,12 @@ scrape_configs:
       - targets: ['host.docker.internal:9100']
         labels:
           group: 'sys-stats-group'
+
+remote_write:
+  - url: 
+    oauth2:
+      client_id: 
+      client_secret: 
+      token_url: 
+      # endpoint_params: 
+        # grant_type: 'client_credentials'

@@ -1,0 +1,8 @@
+# Arbitrary number of usernames may be put here.
+# It is possible to set multiple identical usernames with different passwords.
+# Such usernames can be differentiated by `name` option.
+
+users:
+- bearer_token: "XXXX"
+  url_prefix:
+  - "http://vminsert:8480/insert/0/prometheus"
